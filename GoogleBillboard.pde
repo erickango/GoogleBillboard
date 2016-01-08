@@ -2,13 +2,23 @@ public final static String e = "2.7182818284590452353602874713526624977572470936
 public void setup()  
 {            
      noLoop();  
+     isPrime(e);
 }  
 public void draw()  
 {   
 	//not needed for this assignment
 }  
-public boolean isPrime(double dNum)  
+public boolean isPrime(String word)  
 {   
-    //to be finished later   
+    //to be finished later
+    double turn;
+    for(int s = 0; s < word.length(); s++){
+    
+      turn = Double.parseDouble(word.substring(s, s+10));
+      for(int i = 2; i <= Math.sqrt(turn); i++)
+        if((turn % i) == 0) return false; 
+     
+    }
+  
     return true;  
 } 
