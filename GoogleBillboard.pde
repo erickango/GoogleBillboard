@@ -2,27 +2,24 @@ public final static String e = "2.7182818284590452353602874713526624977572470936
 public void setup()  
 {            
      noLoop();  
-     if(isPrime(e) == true) System.out.println(turn);
-
 }  
-double turn;
+
 public void draw()  
 {   
 	//not needed for this assignment
-	if(isPrime(e) == true) System.out.println(turn);
+	double turn;
+	for(int s = 2; s < e.length() - 10; s++){
+    
+      turn = Double.parseDouble(e.substring(s, s+10));
+      double itsqrt = Math.sqrt(turn);
+      if(isPrime(turn) == true) System.out.println(turn);
+    }
 }  
-public boolean isPrime(String word)  
+public boolean isPrime(double dNum)  
 {   
     //to be finished later
-    double itsqrt = Math.sqrt(turn);
-    for(int s = 0; s < word.length() - 10; s++){
-    
-      turn = Double.parseDouble(word.substring(s, s+10));
-      for(int i = 2; i <= itsqrt; i++)
-        if((turn % i) == 0) return false;
-
-     
-    }
-  
+    double itsqrt = Math.sqrt(dNum);
+    for(int i = 2; i <= itsqrt; i++)
+    	if((dNum % i) == 0) return false;
     return true;  
 } 
